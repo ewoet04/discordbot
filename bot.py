@@ -1,3 +1,4 @@
+import discord
 import asyncio
 import datetime
 import json
@@ -9,7 +10,7 @@ cfg = open("config.json", "r")
 tmpconfig = cfg.read()
 cfg.close()
 config = json.loads(tmpconfig)
-
+token = os.environ['token']
 guild_id = config["server-id"]
 logs_channel = config["logs-channel-id"]
 
