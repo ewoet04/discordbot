@@ -10,7 +10,7 @@ tmpconfig = cfg.read()
 cfg.close()
 config = json.loads(tmpconfig)
 
-token = config["token"]
+token = config["process.env.token"]
 guild_id = config["server-id"]
 logs_channel = config["logs-channel-id"]
 
@@ -54,4 +54,4 @@ async def on_member_join(meme):
 
 
 client.loop.create_task(fetch())
-client.run(token)
+client.run(process.env.token)
